@@ -17,7 +17,6 @@ type ChildrenRender =
 
 function getSystemEffective(): Resolved {
   if (typeof window === 'undefined') return 'dark';
-  console.log(window.matchMedia('(prefers-color-scheme: dark)').matches)
   return window.matchMedia('(prefers-color-scheme: dark)').matches
     ? 'dark'
     : 'light';

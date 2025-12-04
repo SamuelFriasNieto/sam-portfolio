@@ -12,19 +12,22 @@ import {
 } from "@/components/ui/resizable-navbar";
 import { useState } from "react";
 import AppThemeToggler from "./AppThemeToggler";
+import LanguageSwitch from "./LanguageSwitch";
+import { useTranslation } from "react-i18next";
 
 export function NavBar() {
+  const {t} = useTranslation();
   const navItems = [
     {
-      name: "About",
-      link: "#about",
-    },
-    {
-      name: "Projects",
+      name: t("navBar.projects"),
       link: "#projects",
     },
     {
-      name: "Experience",
+      name: t("navBar.about"),
+      link: "#about",
+    },
+    {
+      name: t("navBar.experience"),
       link: "#experience",
     },
   ];
@@ -38,6 +41,7 @@ export function NavBar() {
         <NavBody className="border w-full border-gray-600 py-4">
           <NavItems items={navItems} />
           <AppThemeToggler />
+          <LanguageSwitch />
         </NavBody>
 
         {/* Mobile Navigation */}
